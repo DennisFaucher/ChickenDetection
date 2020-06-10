@@ -26,6 +26,6 @@ Once you have split your video into hundreds, if not thousands, of frames you ne
 
 I happen to have a license for Adobe Lightroom, so I use Lightroom to scan through all the photos and save the best 133 images of each chicken to separate folders named 001 through 006. Any photo viewing software will do including the file manager built in to your operating system.
 
-Once your images are in folders, install the YOLO-Annotation-Tool somewhere using the command "git clone <div style="display: inline">http://example.com</div> https://github.com/ManivannanMurugavel/YOLO-Annotation-Tool.git" 
+Once your images are in folders, install the YOLO-Annotation-Tool somewhere using the command "git clone https:// github . com/ManivannanMurugavel/YOLO-Annotation-Tool.git" (Remove the spaces first)
 ## Lessons Learned
 ## Thank you
