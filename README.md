@@ -26,6 +26,18 @@ Once you have split your video into hundreds, if not thousands, of frames you ne
 
 I happen to have a license for Adobe Lightroom, so I use Lightroom to scan through all the photos and save the best 133 images of each chicken to separate folders named 001 through 006. Any photo viewing software will do including the file manager built in to your operating system.
 
+
 Once your images are in folders, install the YOLO-Annotation-Tool somewhere using the command "git clone https:// github . com/ManivannanMurugavel/YOLO-Annotation-Tool.git" (Remove the spaces first)
+
+
+You will notice that YOLO-Annotation-Tool/Images/ includes a 001 and a 002 directory. copy your folders of images in 001 to 006 folders right into YOLO-Annotation-Tool/Images/
+
+
+Now set a few hours of tedious box drawing aside and fire up "python main.py" from the YOLO-Annotation-Tool directory. When the main.py imaging tool opens, there is a field to enter the number of your image folder, in this case "1", and then you click Load. Your images in that folder will be loaded in seemingly random order.
+
+
+Draw a box around the object you would like to have the class label of 1 and then click Next. Keep doing this until you have labeled all images in that class. If you still have the stamina, you can enter 2 in the "Image Dir:" field, click Load and move on to the labeling the next class.
+
+
 ## Lessons Learned
 ## Thank you
