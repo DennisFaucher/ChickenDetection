@@ -14,5 +14,7 @@ Two Reasons:
 * Darknet OSS neural network software: [Website](https://pjreddie.com/darknet/), GitGub [repository](https://github.com/pjreddie/darknet)
 * Image labeling software: I used the program main.py from this [YOLO-Annotation-Tool](https://github.com/ManivannanMurugavel/YOLO-Annotation-Tool) GitHub repository. The python scripts in this repo are very helpful. The video instructions will drive you insane.
 * Label conversion software: You need to convert the labels that YOLO-Annotation-Tool creates to the Darknet format. Thankfully, the YOLO-Annotation-Tool repo includes the convert.py Python script to do just that.
+### Labeling the Images
+Once you have split your video into hundreds, if not thousands, of frames you need to pick the best 100+ (each class should hav ethe exact number of labeled images) for each image class. In my case, an imge class is a chicken name. I found over time that the most effective images for chicken labeling were either a full side view of the chicken or a full front view of the chicken. Partially obstructed views are not optimal and most chicken butts look the same. 🙂
 ## Lessons Learned
 ## Thank you
