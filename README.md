@@ -62,7 +62,7 @@ Change the value on lines 26 and 29 to the number of each of your image folders 
 
 ### Splitting Data into Training and Test Groups
 
-
+[DMF]
 
 
 
