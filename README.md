@@ -12,4 +12,7 @@ Two Reasons:
 * RTSP-Capable camera: I use this [one](https://www.amazon.com/gp/product/B07GSS4ZHK/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1) 
 * At least 100 photos of each chicken: I used the VLC "Scene Filter" to split a 2 hour video of the chickens into one JPG for every 150 frames. There is a good tutorial on the scene filter [here](https://www.isimonbrown.co.uk/vlc-export-frames/)
 * Darknet OSS neural network software: [Website](https://pjreddie.com/darknet/), GitGub [repository](https://github.com/pjreddie/darknet)
+* Image labeling software: I used the program main.py from this [YOLO-Annotation-Tool](https://github.com/ManivannanMurugavel/YOLO-Annotation-Tool) GitHub repository. The python scripts in this repo are very helpful. The video instructions will drive you insane.
+* Label conversion software: You need to convert the labels that YOLO-Annotation-Tool creates to the Darknet format. Thankfully, the YOLO-Annotation-Tool repo includes the convert.py Python script to do just that.
+## Lessons Learned
 ## Thank you
