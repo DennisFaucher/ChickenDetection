@@ -13,6 +13,8 @@ Two Reasons:
 * At least 100 photos of each chicken: I used the VLC "Scene Filter" to split a 2 hour video of the chickens into one JPG for every 150 frames. There is a good tutorial on the scene filter [here](https://www.isimonbrown.co.uk/vlc-export-frames/)
 * Darknet OSS neural network software: [Website](https://pjreddie.com/darknet/), GitGub [repository](https://github.com/pjreddie/darknet)
 * Image labeling software: I used the program main.py from this [YOLO-Annotation-Tool](https://github.com/ManivannanMurugavel/YOLO-Annotation-Tool) GitHub repository. The python scripts in this repo are very helpful. The video instructions will drive you insane.
+* Python🐍
+* Git🐙
 * Label conversion software: You need to convert the labels that YOLO-Annotation-Tool creates to the Darknet format. Thankfully, the YOLO-Annotation-Tool repo includes the convert.py Python script to do just that.
 ### Labeling the Images
 
@@ -23,5 +25,7 @@ Once you have split your video into hundreds, if not thousands, of frames you ne
 
 
 I happen to have a license for Adobe Lightroom, so I use Lightroom to scan through all the photos and save the best 133 images of each chicken to separate folders named 001 through 006. Any photo viewing software will do including the file manager built in to your operating system.
+
+Once your images are in folders, install the YOLO-Annotation-Tool somewhere using the command "git clone https://github.com/ManivannanMurugavel/YOLO-Annotation-Tool.git" 
 ## Lessons Learned
 ## Thank you
