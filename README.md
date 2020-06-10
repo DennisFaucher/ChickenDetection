@@ -7,5 +7,5 @@ Two Reasons:
 2) I love our chickens
 ## How
 ### Parts List
-* Chickens. We ordered our chickens as chicks here [here] (https://www.mypetchicken.com/catalog/Baby-Chicks-c36.aspx)
+* Chickens. We ordered our chickens as chicks [here](https://www.mypetchicken.com/catalog/Baby-Chicks-c36.aspx)
 ## Thank you
