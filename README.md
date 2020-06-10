@@ -36,7 +36,20 @@ You will notice that YOLO-Annotation-Tool/Images/ includes a 001 and a 002 direc
 Now set a few hours of tedious box drawing aside and fire up "python main.py" from the YOLO-Annotation-Tool directory. When the main.py imaging tool opens, there is a field to enter the number of your image folder, in this case "1", and then you click Load. Your images in that folder will be loaded in seemingly random order.
 
 
-Draw a box around the object you would like to have the class label of 1 and then click Next. Keep doing this until you have labeled all images in that class. If you still have the stamina, you can enter 2 in the "Image Dir:" field, click Load and move on to the labeling the next class.
+Draw a box around the object you would like to have the class label of 1 and then click Next. Keep doing this until you have labeled all images in that class. If you still have the stamina, you can enter 2 in the "Image Dir:" field, click Load and move on to the labeling the next class. Keep doing this until all images in all classes are labeled. You will find a corresponding .txt file in Labels/00? for each .jpg in Images/00?
+
+
+### Converting Labels to Darknet Format
+The YOLO Annotation Tool creates labels in this format:
+
+1
+167 204 290 403
+
+Darknet expects labels in this format:
+
+0 0.178515625 0.421527777778 0.09609375 0.276388888889
+
+
 
 
 ## Lessons Learned
