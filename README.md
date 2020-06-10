@@ -1,12 +1,18 @@
 # ChickenDetection
+
 Create a custom machine learning model to recognize our six chickens by name
 ![Two Chickens](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/Jaja%20Kielyr.png)
+
 ## Why
+
 Two Reasons:
 1) At work, I am helping multiple customers build machine learning solutions to advance drug discovery and overall subscriber health. Understanding machine learning for object detection at a deeper level will enable me to better guide my customers.
 2) I love our chickens
+
 ## How
+
 ### Parts List
+
 * Chickens🙂🐓: We ordered our chickens as chicks [here](https://www.mypetchicken.com/catalog/Baby-Chicks-c36.aspx)
 * Access to an NVIDIA GPU with enough video RAM for training: My laptop does not have an NVIDIA GPU, my NVIDIA Xavier GPU core dumps if you try to train a new model on it.  I rented an AWS g2.2xlarge GPU instance with the Deep Learning AMI (Ubuntu 18.04) Version 29.0 AMI.
 * RTSP-Capable camera: I use this [one](https://www.amazon.com/gp/product/B07GSS4ZHK/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1) 
@@ -40,6 +46,7 @@ Draw a box around the object you would like to have the class label of 1 and the
 
 
 ### Converting Labels to Darknet Format
+
 The YOLO Annotation Tool creates labels in this format:
 1
 167 204 290 403
@@ -51,7 +58,11 @@ The script convert.py, not surprisingly, converts from one label format to the o
 
 ![convert.py](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/convert.py.png)
 
-Change the value on lines 26 and 29 to the number of each of your image folders (001-006) one at a time and run. The labels in that Label folder will be converted and placed in a single Output folder. As you can imagine, it is important that none of your images or labels have the same name before running this step. I changed the prefix of all my images to match the name of my chicken before I labeled them. 
+Change the value on lines 26 and 29 to the number of each of your image folders (001-006) one at a time and run. The labels in that Labels folder will be converted and placed in a single Output folder. As you can imagine, it is important that none of your images or labels have the same name before running this step. I changed the prefix of all my images to match the name of my chicken before I labeled them. For instance Labels/001/kielyr_257401.jpg
+
+### Splitting Data into Training and Test Groups
+
+
 
 
 
