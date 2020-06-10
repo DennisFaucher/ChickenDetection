@@ -7,5 +7,7 @@ Two Reasons:
 2) I love our chickens
 ## How
 ### Parts List
-* Chickens. We ordered our chickens as chicks [here](https://www.mypetchicken.com/catalog/Baby-Chicks-c36.aspx)
+* Chickens🙂🐓: We ordered our chickens as chicks [here](https://www.mypetchicken.com/catalog/Baby-Chicks-c36.aspx)
+* Access to an NVIDIA GPU with enough video RAM for training: My laptop does not have an NVIDIA GPU, my NVIDIA Xavier GPU core dumps if you try to train a new model on it.  I rented an AWS g2.2xlarge GPU instance with the Deep Learning AMI (Ubuntu 18.04) Version 29.0 AMI.
+* RTSP-Capable camera: I use this one(https://www.amazon.com/gp/product/B07GSS4ZHK/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1) 
 ## Thank you
