@@ -41,13 +41,17 @@ Draw a box around the object you would like to have the class label of 1 and the
 
 ### Converting Labels to Darknet Format
 The YOLO Annotation Tool creates labels in this format:
-
 1
 167 204 290 403
 
 Darknet expects labels in this format:
-
 0 0.178515625 0.421527777778 0.09609375 0.276388888889
+
+The script convert.py, not surprisingly, converts from one label format to the other and placel the labels in the Output directory.
+
+![convert.py](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/convert.py.png)
+
+Change the value on lines 26 and 29 to the number of each of your image folders (001-006) one at a time and run. The labels in that Label folder will be converted and placed in a single Output folder. As you can imagine, it is important that none of your images or labels have the same name before running this step. I changed the prefix of all my images to match the name of my chicken before I labeled them. 
 
 
 
