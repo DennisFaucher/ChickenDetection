@@ -83,6 +83,21 @@ On your NVIDIA GPU training machine, change line 8 to be the full path of the Ou
 
 ### Train that Model!!!
 
+OK. On your NVIDIA GPU machine, in the dakrnet directory, you will need to edit three files, create one directory and download one large file.
+
+1) Your .data file
+The data file tells the training process where to find things. Create a .data file with a prefix of something that makes sense. I used the prefix "6chix" for everything. In a new 6chix.data file, I added these lines:
+
+````[Javascript]
+classes= 6 
+train  = train.txt  
+valid  = test.txt  
+names = 6chix.names  
+backup = 6chix-backup/
+````
+
+Your classes= will need to be changed to match the number of object classes you are training for
+
 
 ## Lessons Learned
 ## Thank you
