@@ -174,5 +174,25 @@ To more easily keep track of when my average loss was below zero and leveling ou
 ./darknet detector train 6chix.data cfg/6chix.cfg darknet53.conv.74 | grep "avg," > 6chix.out
 ````
 
+### Test Your Model
+
+Once your model training has reached an average loss number that you are happy with, kill the darknet training run with CTRL-C.
+
+You have a few options to test your model for accuracy:
+
+1) Test with a single image
+Find an image that includes one or more of your image classes that was not used during training nor testing. Run this command:
+
+````[Javascript]
+./darknet detector test 6chix.data cfg/6chix.cfg 6chix-backup/6chix_40000.weights imagename.jpg
+````
+
+This will create a new file, predictions.jpg that predicts the classes with names boxes around them like this:
+
+![predictions.jpg](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/predictions.jpg)
+
+
+./darknet detector demo 6chix.data cfg/6chix.cfg 6chix-backup/6chix_40000.weights rtsp://dennis:FosCam01\!@192.168.86.42:88/videoMain -i 0
+
 ## Lessons Learned
 ## Thank you
