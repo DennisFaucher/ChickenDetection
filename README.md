@@ -27,23 +27,23 @@ Two Reasons:
 ![Kielyr Label](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/Kielyr%20Label.png)
 
 
-Once you have split your video into hundreds, if not thousands, of frames you need to pick the best 100+ (each class should hav ethe exact number of labeled images) for each image class. In my case, an imge class is a chicken name. I found over time that the most effective images for chicken labeling were either a full side view of the chicken or a full front view of the chicken. Partially obstructed views are not optimal and most chicken butts look the same. 🙂
+Once you have split your video into hundreds, if not thousands, of frames you need to pick the best 100+ (each class should have the exact number of labeled images) for each image class. In my case, an image class is a chicken name. I found over time that the most effective images for chicken labeling were either a full side view of the chicken or a full front view of the chicken. Partially obstructed views are not optimal and most chicken butts look the same. 🙂
 
 
-I happen to have a license for Adobe Lightroom, so I use Lightroom to scan through all the photos and save the best 133 images of each chicken to separate folders named 001 through 006. Any photo viewing software will do including the file manager built in to your operating system.
+I happen to have a license for Adobe Lightroom, so I used Lightroom to scan through all the photos and save the best 133 images of each chicken to separate directories named 001 through 006. Any photo viewing software will do including the file manager built in to your operating system.
 
 
-Once your images are in folders, install the YOLO-Annotation-Tool somewhere using the command
+Once your images are in directories, install the YOLO-Annotation-Tool somewhere using the command
 
 ````[Javascript]
 git clone https://github.com/ManivannanMurugavel/YOLO-Annotation-Tool.git
 ````
 
 
-You will notice that YOLO-Annotation-Tool/Images/ includes a 001 and a 002 directory. copy your folders of images in 001 to 006 folders right into YOLO-Annotation-Tool/Images/
+You will notice that YOLO-Annotation-Tool/Images/ includes a 001 and a 002 directory. copy your 001 through 006 directories of images right into YOLO-Annotation-Tool/Images/
 
 
-Now set a few hours of tedious box drawing aside and fire up "python main.py" from the YOLO-Annotation-Tool directory. When the main.py imaging tool opens, there is a field to enter the number of your image folder, in this case "1", and then you click Load. Your images in that folder will be loaded in seemingly random order.
+Now set a few hours of tedious box drawing aside and fire up "python main.py" from the YOLO-Annotation-Tool directory. When the main.py imaging tool opens, there is an "Image Dir:" field to enter the number of your first image directory, in this case "1". Then you click Load. Your images in that directory will be loaded in seemingly random order.
 
 
 Draw a box around the object you would like to have the class label of 1 and then click Next. Keep doing this until you have labeled all images in that class. If you still have the stamina, you can enter 2 in the "Image Dir:" field, click Load and move on to the labeling the next class. Keep doing this until all images in all classes are labeled. You will find a corresponding .txt file in Labels/00? for each .jpg in Images/00?
@@ -52,21 +52,27 @@ Draw a box around the object you would like to have the class label of 1 and the
 ### Converting Labels to Darknet Format
 
 The YOLO Annotation Tool creates labels in this format:
+
+````[Javascript]
 1
 167 204 290 403
+````
 
 Darknet expects labels in this format:
-0 0.178515625 0.421527777778 0.09609375 0.276388888889
 
-The script convert.py, not surprisingly, converts from one label format to the other and placel the labels in the Output directory.
+````[Javascript]
+0 0.178515625 0.421527777778 0.09609375 0.276388888889
+````
+
+The script convert.py, not surprisingly, converts from one label format to the other and places the labels in the "Output" directory.
 
 ![convert.py](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/convert.py.png)
 
-Change the value on lines 26 and 29 to the number of each of your image folders (001-006) one at a time and run. The labels in that Labels folder will be converted and placed in a single Output folder. As you can imagine, it is important that none of your images or labels have the same name before running this step. I changed the prefix of all my images to match the name of my chicken before I labeled them. For instance Labels/001/kielyr_257401.jpg
+Change the value on lines 26 and 29 to the number of each of your image directories (001-006) one at a time and run. The labels in that Labels directory will be converted and placed in a single Output directory. As you can imagine, it is important that none of your images or labels have the same name before running this step. I changed the prefix of all my images to match the name of my chicken before I labeled them. For instance Labels/001/kielyr_257401.jpg
 
 Now copy all of your labeled iames in this Output directory. That is important for the next major step.
 
-Also decide where the NVIDIA GPU is that you are going to use to train the model. If it is somewhere else, you will need to scp your Output folder there (assuming you have already installed darknet and Yolo-Annotation-Tool there) 
+Also decide where the NVIDIA GPU is that you are going to use to train the model. If it is somewhere else, you will need to scp your Output directory there (assuming you have already installed darknet and Yolo-Annotation-Tool there) 
 
 ### Splitting Data into Training and Test Groups
 
@@ -120,7 +126,7 @@ rellian
 ````
 
 4) Create your .cfg file
-The .cfg file decribes how to build the neural network for your model. The changes you make to the file depends on whether you are training a YOLO model or a YOLO-tiny model. I used YOLO-tiny as it is much lighter on resources and works well enough for my purposes. I will eplain the YOLO-tiny config changes here.
+The .cfg file decribes how to build the neural network for your model. The changes you make to the file depends on whether you are training a YOLO model or a YOLO-tiny model. I used YOLO-tiny as it is much lighter on resources and works well enough for my purposes. I will list out the YOLO-tiny config changes here.
 
 * Copy darknet/cfg/yolov3-tiny.cfg darknet/cfg/6chix.cfg
 * Make these edits to your new .cfg file
@@ -149,7 +155,7 @@ The standard command line to start the training is this:
 ./darknet detector train 6chix.data cfg/6chix.cfg darknet53.conv.74
 ````
 
-You let the training run until the average loss gets to be less than 0 and levels out without improvement. For me, that was when the files in my backup directory reached the 40000.weights level. You can read more about when to stop training in [this](https://github.com/AlexeyAB/darknet/blob/master/README.md#when-should-i-stop-training) article.
+You let the training run until the average loss gets to be less than 0 and levels out without improvement. For me, that was when the files in my backup directory reached the 40000.weights level (about 6 hours). You can read more about when to stop training in [this](https://github.com/AlexeyAB/darknet/blob/master/README.md#when-should-i-stop-training) article.
 
 ````[Javascript]
 -rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix.backup
@@ -168,7 +174,7 @@ You let the training run until the average loss gets to be less than 0 and level
 -rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:42 6chix_40000.weights
 ````
 
-To more easily keep track of when my average loss was below zero and leveling out, I added a pipe to my command. In another terminal window I ran "tail -f 6chix.out".
+To more easily keep track of when my average loss was below zero and leveling out, I added a pipe and a grep to my darknet command. Also, in another terminal window I ran "tail -f 6chix.out".
 
 ````[Javascript]
 ./darknet detector train 6chix.data cfg/6chix.cfg darknet53.conv.74 | grep "avg," > 6chix.out
