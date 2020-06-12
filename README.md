@@ -62,7 +62,11 @@ Change the value on lines 26 and 29 to the number of each of your image folders 
 
 ### Splitting Data into Training and Test Groups
 
-[DMF]
+The python script, process.py creates a train.txt and a test.txt file in the current directory with a 90/10 split of the full path to all of your images.
+
+![process.py](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/process.py.png)
+
+
 
 
 
