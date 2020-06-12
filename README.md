@@ -60,7 +60,9 @@ The script convert.py, not surprisingly, converts from one label format to the o
 
 Change the value on lines 26 and 29 to the number of each of your image folders (001-006) one at a time and run. The labels in that Labels folder will be converted and placed in a single Output folder. As you can imagine, it is important that none of your images or labels have the same name before running this step. I changed the prefix of all my images to match the name of my chicken before I labeled them. For instance Labels/001/kielyr_257401.jpg
 
-Now copy all of your labeled iames in this Output directory. That is important for the next step.
+Now copy all of your labeled iames in this Output directory. That is important for the next major step.
+
+Also decide where the NVIDIA GPU is that you are going to use to train the model. If it is somewhere else, you will need to scp your Output folder there (assuming you have already installed darknet and Yolo-Annotation-Tool there) 
 
 ### Splitting Data into Training and Test Groups
 
@@ -68,7 +70,7 @@ The python script, process.py creates a train.txt and a test.txt file in the cur
 
 ![process.py](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/process.py.png)
 
-Change line 8 to be the full path of the Output directory where you have stored all your images and converted label files and run. Very quickly, you will have two new files, train.txt and test.txt
+On your NVIDIA GPU training machine, change line 8 to be the full path of the Output directory where you have stored all your images and converted label files and run. Very quickly, you will have two new files, train.txt and test.txt. They will look something like this:
 
 ````[Javascript]
 /Users/faucherd/Documents/Personal/Machine_Learning/YOLO-Annotation-Tool/Labels/output/nai-85.jpg
@@ -79,6 +81,7 @@ Change line 8 to be the full path of the Output directory where you have stored 
 /Users/faucherd/Documents/Personal/Machine_Learning/YOLO-Annotation-Tool/Labels/output/zaja-46.jpg
 ````
 
+### Train that Model!!!
 
 
 ## Lessons Learned
