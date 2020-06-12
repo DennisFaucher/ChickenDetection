@@ -134,11 +134,44 @@ Line 171, set filters=(classes + 5)*3, e.g.  for 6 classes filters=33
 Line 177, set classes=6, the number of custom classes.
 ````
 
-5) Download 
+5) Download a set of convolutional weights to get started 
 To start training, YOLOv3 requires a set of convolutional weights. I used the darknet53 weights from the darknet repo. You can download those weights with this command: 
 
 ````[Javascript]
 wget https://pjreddie.com/media/files/darknet53.conv.74
+````
+
+6) Start training
+
+The standard command line to start the training is this:
+
+````[Javascript]
+./darknet detector train 6chix.data cfg/6chix.cfg darknet53.conv.74
+````
+
+You let the training run until the average loss gets to be less than 0 and levels out without improvement. For me, that was when the files in my backup directory reached the 40000.weights level. You can read more about when to stop training in [this](https://github.com/AlexeyAB/darknet/blob/master/README.md#when-should-i-stop-training) article.
+
+````[Javascript]
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix.backup
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_100.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_200.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_300.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_400.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_500.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_600.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_700.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_800.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_900.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_10000.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_20000.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:43 6chix_30000.weights
+-rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:42 6chix_40000.weights
+````
+
+To more easily keep track of 
+
+````[Javascript]
+./darknet detector train 6chix.data cfg/6chix.cfg darknet53.conv.74 | grep "avg," > 6chix.out
 ````
 
 ## Lessons Learned
