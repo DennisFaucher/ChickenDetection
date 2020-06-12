@@ -178,7 +178,7 @@ To more easily keep track of when my average loss was below zero and leveling ou
 
 Once your model training has reached an average loss number that you are happy with, kill the darknet training run with CTRL-C.
 
-You have a few options to test your model for accuracy:
+You have a few options to test your model for accuracy. I ran each of these tests locally on my NVIDIA Xavier single board computer:
 
 1) Test with a single image
 
