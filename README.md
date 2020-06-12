@@ -181,18 +181,35 @@ Once your model training has reached an average loss number that you are happy w
 You have a few options to test your model for accuracy:
 
 1) Test with a single image
-Find an image that includes one or more of your image classes that was not used during training nor testing. Run this command:
+
+Find an image file that includes one or more of your image classes that was not used during training nor testing. Run this command:
 
 ````[Javascript]
-./darknet detector test 6chix.data cfg/6chix.cfg 6chix-backup/6chix_40000.weights imagename.jpg
+./darknet detector test 6chix.data cfg/6chix.cfg 6chix-backup/6chix_40000.weights newimagename.jpg
 ````
 
-This will create a new file, predictions.jpg that predicts the classes with names boxes around them like this:
+This will create a new file, predictions.jpg, that predicts the classes with names boxes around them like this:
 
 ![predictions.jpg](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/predictions.jpg)
 
+2) Test with a video file
 
-./darknet detector demo 6chix.data cfg/6chix.cfg 6chix-backup/6chix_40000.weights rtsp://dennis:FosCam01\!@192.168.86.42:88/videoMain -i 0
+This is more fun than a single image as you are more likely to recognize images at 20 fps than in a single image. Run thi command:
+
+````[Javascript]
+./darknet detector test 6chix.data cfg/6chix.cfg 6chix-backup/6chix_40000.weights -ext_output videofile.mp4
+````
+
+2) Test with a live RTSP source
+
+This was my ultimate goal. Chicken recognition on a live stream. Firt, figure out the proper URL for your RTSP source and then run this command:
+
+````[Javascript]
+./darknet detector demo 6chix.data cfg/6chix.cfg 6chix-backup/6chix_40000.weights rtsp://username:password\!@192.168.1.100:88/videoMain -i 0
+````
+
+If everything works, you will get and awesome live video stream like ![this](https://youtu.be/jHzRhhJoYQY)
+
 
 ## Lessons Learned
 ## Thank you
