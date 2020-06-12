@@ -70,6 +70,15 @@ The python script, process.py creates a train.txt and a test.txt file in the cur
 
 Change line 8 to be the full path of the Output directory where you have stored all your images and converted label files and run. Very quickly, you will have two new files, train.txt and test.txt
 
+````[Javascript]
+/Users/faucherd/Documents/Personal/Machine_Learning/YOLO-Annotation-Tool/Labels/output/nai-85.jpg
+/Users/faucherd/Documents/Personal/Machine_Learning/YOLO-Annotation-Tool/Labels/output/bo-91.jpg
+/Users/faucherd/Documents/Personal/Machine_Learning/YOLO-Annotation-Tool/Labels/output/kielyr-68.jpg
+/Users/faucherd/Documents/Personal/Machine_Learning/YOLO-Annotation-Tool/Labels/output/vespyr-40.jpg
+/Users/faucherd/Documents/Personal/Machine_Learning/YOLO-Annotation-Tool/Labels/output/rellian-54.jpg
+/Users/faucherd/Documents/Personal/Machine_Learning/YOLO-Annotation-Tool/Labels/output/zaja-46.jpg
+````
+
 
 
 ## Lessons Learned
