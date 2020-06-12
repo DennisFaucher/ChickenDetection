@@ -130,5 +130,12 @@ Line 171, set filters=(classes + 5)*3, e.g.  for 6 classes filters=33
 Line 177, set classes=6, the number of custom classes.
 ````
 
+5) Download 
+To start training, YOLOv3 requires a set of convolutional weights. I used the darknet53 weights from the darknet repo. You can download those weights with this command: 
+
+````[Javascript]
+wget https://pjreddie.com/media/files/darknet53.conv.74
+````
+
 ## Lessons Learned
 ## Thank you
