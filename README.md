@@ -81,6 +81,8 @@ On your NVIDIA GPU training machine, change line 8 to be the full path of the Ou
 /Users/faucherd/Documents/Personal/Machine_Learning/YOLO-Annotation-Tool/Labels/output/zaja-46.jpg
 ````
 
+Copy train.txt and test.txt to your darknet directory
+
 ### Train that Model!!!
 
 OK. On your NVIDIA GPU machine, in the dakrnet directory, you will need to edit three files, create one directory and download one large file.
@@ -97,6 +99,18 @@ backup = 6chix-backup/
 ````
 
 Your classes= will need to be changed to match the number of object classes you are training for
+
+2) Your .names file
+The .names file gives human readable names to each of your classes in order. In a new 6chix.names file, I added these lines:
+
+````[Javascript]
+kielyr
+nai
+zaja
+bo
+vespyr
+rellian
+````
 
 
 ## Lessons Learned
