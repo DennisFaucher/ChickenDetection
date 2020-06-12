@@ -168,7 +168,7 @@ You let the training run until the average loss gets to be less than 0 and level
 -rw-rw-r-- 1 dennis dennis 34751196 Jun  8 08:42 6chix_40000.weights
 ````
 
-To more easily keep track of 
+To more easily keep track of when my average loss was below zero and leveling out, I added a pipe to my command. In another terminal window I ran "tail -f 6chix.out".
 
 ````[Javascript]
 ./darknet detector train 6chix.data cfg/6chix.cfg darknet53.conv.74 | grep "avg," > 6chix.out
