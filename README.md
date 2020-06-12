@@ -87,7 +87,7 @@ Copy train.txt and test.txt to your darknet directory
 
 OK. On your NVIDIA GPU machine, in the dakrnet directory, you will need to edit three files, create one directory and download one large file.
 
-1) Your .data file
+1) Create your .data file
 The data file tells the training process where to find things. Create a .data file with a prefix of something that makes sense. I used the prefix "6chix" for everything. In a new 6chix.data file, I added these lines:
 
 ````[Javascript]
@@ -100,7 +100,10 @@ backup = 6chix-backup/
 
 Your classes= will need to be changed to match the number of object classes you are training for
 
-2) Your .names file
+2) Create your backup directory
+The backup directory specified in your .data file is where the training weights will be stored during training. Create a new directory under the darknet directory that matches the name of the backup variable in your .data file.
+
+3) Create your .names file
 The .names file gives human readable names to each of your classes in order. In a new 6chix.names file, I added these lines:
 
 ````[Javascript]
@@ -112,6 +115,20 @@ vespyr
 rellian
 ````
 
+4) Create your .cfg file
+The .cfg file decribes how to build the neural network for your model. The changes you make to the file depends on whether you are training a YOLO model or a YOLO-tiny model. I used YOLO-tiny as it is much lighter on resources and works well enough for my purposes. I will eplain the YOLO-tiny config changes here.
+
+* Copy darknet/cfg/yolov3-tiny.cfg darknet/cfg/6chix.cfg
+* Make these edits to your new .cfg file
+
+````[Javascript]
+Line 3: batch=24
+Line 4: subdivisions=8
+Line 127, set filters=(classes + 5)*3, e.g. for 6 classes filters=33
+Line 135, set classes=6, the number of custom classes.
+Line 171, set filters=(classes + 5)*3, e.g.  for 6 classes filters=33
+Line 177, set classes=6, the number of custom classes.
+````
 
 ## Lessons Learned
 ## Thank you
