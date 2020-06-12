@@ -60,14 +60,15 @@ The script convert.py, not surprisingly, converts from one label format to the o
 
 Change the value on lines 26 and 29 to the number of each of your image folders (001-006) one at a time and run. The labels in that Labels folder will be converted and placed in a single Output folder. As you can imagine, it is important that none of your images or labels have the same name before running this step. I changed the prefix of all my images to match the name of my chicken before I labeled them. For instance Labels/001/kielyr_257401.jpg
 
+Now copy all of your labeled iames in this Output directory. That is important for the next step.
+
 ### Splitting Data into Training and Test Groups
 
 The python script, process.py creates a train.txt and a test.txt file in the current directory with a 90/10 split of the full path to all of your images.
 
 ![process.py](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/process.py.png)
 
-
-
+Change line 8 to be the full path of the Output directory where you have stored all your images and converted label files and run. Very quickly, you will have two new files, train.txt and test.txt
 
 
 
