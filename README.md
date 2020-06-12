@@ -208,8 +208,15 @@ This was my ultimate goal. Chicken recognition on a live stream. First, figure o
 ./darknet detector demo 6chix.data cfg/6chix.cfg 6chix-backup/6chix_40000.weights rtsp://username:password\!@192.168.1.100:88/videoMain -i 0
 ````
 
-If everything works, you will get and awesome live video stream like [this](https://youtu.be/jHzRhhJoYQY)
-
+If everything works, you will get an awesome live video stream like [this](https://youtu.be/jHzRhhJoYQY?t=63)
 
 ## Lessons Learned
+
+* Use the same number of images for each image class
+* Use as many images > 100 for each image class as you can stand to label individually
+* Label your images with boxes that include the entire image class at a non-ambiguous angle. For instance, chicken butts look very similar 🙂
+* If you don't have an NVIDIA GPU and can afford the $10-$20 of AWS time, perform your training in the cloud. Your training time could drop from days to hours.
+
 ## Thank you
+
+Thank you. I hope you have found this post educational as well as helpful. I welcome your input as well as your corrections.
