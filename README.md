@@ -194,7 +194,7 @@ This will create a new file, predictions.jpg, that predicts the classes with nam
 
 2) Test with a video file
 
-This is more fun than a single image as you are more likely to recognize images at 20 fps than in a single image. Run thi command:
+This is more fun than a single image as you are more likely to recognize images at 20 fps than in a single image. Run this command:
 
 ````[Javascript]
 ./darknet detector test 6chix.data cfg/6chix.cfg 6chix-backup/6chix_40000.weights -ext_output videofile.mp4
@@ -202,13 +202,13 @@ This is more fun than a single image as you are more likely to recognize images 
 
 2) Test with a live RTSP source
 
-This was my ultimate goal. Chicken recognition on a live stream. Firt, figure out the proper URL for your RTSP source and then run this command:
+This was my ultimate goal. Chicken recognition on a live stream. First, figure out the proper URL for your RTSP source and then run this command:
 
 ````[Javascript]
 ./darknet detector demo 6chix.data cfg/6chix.cfg 6chix-backup/6chix_40000.weights rtsp://username:password\!@192.168.1.100:88/videoMain -i 0
 ````
 
-If everything works, you will get and awesome live video stream like ![this](https://youtu.be/jHzRhhJoYQY)
+If everything works, you will get and awesome live video stream like [this](https://youtu.be/jHzRhhJoYQY)
 
 
 ## Lessons Learned
