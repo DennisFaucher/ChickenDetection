@@ -24,7 +24,7 @@ Two Reasons:
 * Label conversion software: You need to convert the labels that YOLO-Annotation-Tool creates to the Darknet format. Thankfully, the YOLO-Annotation-Tool repo includes the convert.py Python script to do just that.
 ### Labeling the Images
 
-![Kielyr Label](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/Kielyr%20Label.png)
+![Kielyr Label](https://github.com/DennisFaucher/ChickenDetection/blob/master/ReadMeImages/Kielyr%20Label.png)
 
 
 Once you have split your video into hundreds, if not thousands, of frames you need to pick the best 100+ (each class should have the exact number of labeled images) for each image class. In my case, an image class is a chicken name. I found over time that the most effective images for chicken labeling were either a full side view of the chicken or a full front view of the chicken. Partially obstructed views are not optimal and most chicken butts look the same. 🙂
@@ -66,7 +66,7 @@ Darknet expects labels in this format:
 
 The script convert.py, not surprisingly, converts from one label format to the other and places the labels in the "Output" directory.
 
-![convert.py](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/convert.py.png)
+![convert.py](https://github.com/DennisFaucher/ChickenDetection/blob/master/ReadMeImages/convert.py.png)
 
 Change the value on lines 26 and 29 to the number of each of your image directories (001-006) one at a time and run. The labels in that Labels directory will be converted and placed in a single Output directory. As you can imagine, it is important that none of your images or labels have the same name before running this step. I changed the prefix of all my images to match the name of my chicken before I labeled them. For instance Labels/001/kielyr_257401.jpg
 
@@ -78,7 +78,7 @@ Also decide where the NVIDIA GPU is that you are going to use to train the model
 
 The python script, process.py creates a train.txt and a test.txt file in the current directory with a 90/10 split of the full path to all of your images.
 
-![process.py](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/process.py.png)
+![process.py](https://github.com/DennisFaucher/ChickenDetection/blob/master/ReadMeImages/process.py.png)
 
 On your NVIDIA GPU training machine, change line 8 to be the full path of the Output directory where you have stored all your images and converted label files and run. Very quickly, you will have two new files, train.txt and test.txt. They will look something like this:
 
@@ -196,7 +196,7 @@ Find an image file that includes one or more of your image classes that was not 
 
 This will create a new file, predictions.jpg, that predicts the classes with names boxes around them like this:
 
-![predictions.jpg](https://github.com/DennisFaucher/ChickenDetection/blob/master/Images/predictions.jpg)
+![predictions.jpg](https://github.com/DennisFaucher/ChickenDetection/blob/master/ReadMeImages/predictions.jpg)
 
 2) Test with a video file
 
